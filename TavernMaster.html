@@ -72,11 +72,17 @@ tw-link:hover.visited
 }
 
 
+
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">/*! typed.js integration module for Harlowe */
 !function(){"use strict";var getInlineOptions=function(name){var match,options={},typedRe=/^typed(?:-(\w+))+\b$/,parseRe=/-(speed|delay)(\d+)\b/g;if("typed"!==name&&typedRe.test(name))for(;null!==(match=parseRe.exec(name));)switch(match[1]){case"speed":options.typeSpeed=+match[2];break;case"delay":options.startDelay=+match[2]}return options},typedCallbackFactory=function(el,callback){return function(){var $outer=jQuery(el),$inner=jQuery('<div class="typedjs-text-wrapper" style="display:block;position:absolute;left:0;top:0;"><span class="typed"></span></div>'),$source=$outer.children('tw-hook[name|="typed"]'),options=jQuery.extend({typeSpeed:40,startDelay:400},getInlineOptions($source.attr("name")),{strings:[$source.html()]});"function"==typeof callback&&(options.callback=callback),$outer.append($inner),$inner.children().typed(options)}};window.startTypedModule=function(){jQuery('tw-hook[name|="typed"]').addClass("typed").css("visibility","hidden").wrap('<div class="typedjs-outer-wrapper" style="display:block;position:relative;"></div>');for(var $elements=jQuery("tw-passage .typedjs-outer-wrapper"),callback=null,i=$elements.length-1;i>=0;--i)callback=typedCallbackFactory($elements[i],callback);"function"==typeof callback&&callback()}}();
 
 /!* typed.js */
 !function(t){"use strict";var s=function(s,e){this.el=t(s),this.options=t.extend({},t.fn.typed.defaults,e),this.isInput=this.el.is("input"),this.attr=this.options.attr,this.showCursor=this.isInput?!1:this.options.showCursor,this.elContent=this.attr?this.el.attr(this.attr):this.el.text(),this.contentType=this.options.contentType,this.typeSpeed=this.options.typeSpeed,this.startDelay=this.options.startDelay,this.backSpeed=this.options.backSpeed,this.backDelay=this.options.backDelay,this.strings=this.options.strings,this.strPos=0,this.arrayPos=0,this.stopNum=0,this.loop=this.options.loop,this.loopCount=this.options.loopCount,this.curLoop=0,this.stop=!1,this.cursorChar=this.options.cursorChar,this.shuffle=this.options.shuffle,this.sequence=[],this.build()};s.prototype={constructor:s,init:function(){var t=this;t.timeout=setTimeout(function(){for(var s=0;s<t.strings.length;++s)t.sequence[s]=s;t.shuffle&&(t.sequence=t.shuffleArray(t.sequence)),t.typewrite(t.strings[t.sequence[t.arrayPos]],t.strPos)},t.startDelay)},build:function(){this.showCursor===!0&&(this.cursor=t('<span class="typed-cursor">'+this.cursorChar+"</span>"),this.el.after(this.cursor)),this.init()},typewrite:function(t,s){if(this.stop!==!0){var e=Math.round(70*Math.random())+this.typeSpeed,o=this;o.timeout=setTimeout(function(){var e=0,r=t.substr(s);if("^"===r.charAt(0)){var i=1;/^\^\d+/.test(r)&&(r=/\d+/.exec(r)[0],i+=r.length,e=parseInt(r)),t=t.substring(0,s)+t.substring(s+i)}if("html"===o.contentType){var n=t.substr(s).charAt(0);if("<"===n||"&"===n){var a="",h="";for(h="<"===n?">":";";t.substr(s).charAt(0)!==h;)a+=t.substr(s).charAt(0),s++;s++,a+=h}}o.timeout=setTimeout(function(){if(s===t.length){if(o.options.onStringTyped(o.arrayPos),o.arrayPos===o.strings.length-1&&(o.options.callback(),o.curLoop++,o.loop===!1||o.curLoop===o.loopCount))return;o.timeout=setTimeout(function(){o.backspace(t,s)},o.backDelay)}else{0===s&&o.options.preStringTyped(o.arrayPos);var e=t.substr(0,s+1);o.attr?o.el.attr(o.attr,e):o.isInput?o.el.val(e):"html"===o.contentType?o.el.html(e):o.el.text(e),s++,o.typewrite(t,s)}},e)},e)}},backspace:function(t,s){if(this.stop!==!0){var e=Math.round(70*Math.random())+this.backSpeed,o=this;o.timeout=setTimeout(function(){if("html"===o.contentType&&">"===t.substr(s).charAt(0)){for(var e="";"<"!==t.substr(s).charAt(0);)e-=t.substr(s).charAt(0),s--;s--,e+="<"}var r=t.substr(0,s);o.attr?o.el.attr(o.attr,r):o.isInput?o.el.val(r):"html"===o.contentType?o.el.html(r):o.el.text(r),s>o.stopNum?(s--,o.backspace(t,s)):s<=o.stopNum&&(o.arrayPos++,o.arrayPos===o.strings.length?(o.arrayPos=0,o.shuffle&&(o.sequence=o.shuffleArray(o.sequence)),o.init()):o.typewrite(o.strings[o.sequence[o.arrayPos]],s))},e)}},shuffleArray:function(t){var s,e,o=t.length;if(o)for(;--o;)e=Math.floor(Math.random()*(o+1)),s=t[e],t[e]=t[o],t[o]=s;return t},reset:function(){var t=this;clearInterval(t.timeout);var s=this.el.attr("id");this.el.after('<span id="'+s+'"/>'),this.el.remove(),"undefined"!=typeof this.cursor&&this.cursor.remove(),t.options.resetCallback()}},t.fn.typed=function(e){return this.each(function(){var o=t(this),r=o.data("typed"),i="object"==typeof e&&e;r||o.data("typed",r=new s(this,i)),"string"==typeof e&&r[e]()})},t.fn.typed.defaults={strings:["These are the default values...","You know what you should do?","Use your own!","Have a great day!"],typeSpeed:0,startDelay:0,backSpeed:0,shuffle:!1,backDelay:500,loop:!1,loopCount:!1,showCursor:!0,cursorChar:"|",attr:null,contentType:"html",callback:function(){},preStringTyped:function(){},onStringTyped:function(){},resetCallback:function(){}}}(window.jQuery);
+
+
+
 
 
 
@@ -264,19 +270,17 @@ Torch (unlit)-&gt;eatChickenLeg]] ] ](stop:)]
 &lt;hr color=#00FF21&gt;
 
 &lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="17" name="getDrink" tags="" position="1733,973">&lt;hr color=#00FF21&gt;
-(live: 2s)[(transition: &quot;dissolve&quot;)[ (link-reveal: &quot;&amp;quot;Alright, ol&#x27; top, what&#x27;s your poison?&amp;quot; says the barkeep.&quot;)[
+(live: 2s)[(transition: &quot;dissolve&quot;)[ (link-reveal: &quot;&amp;quot;Alright, ol&#x27; top, what&#x27;s your poison?&amp;quot; says the barkeep. &amp;quot;We got:&amp;quot;&quot;)[
 
-[[We got:
-Ale
+[[Ale
 Mead
 Grog
-Beer
+Wine
 Or Club Soda-&gt;getClubSoda]]
 
 -
 
-[[We got:
-Ale
+[[Ale
 Ale
 Ale
 Ale
@@ -293,7 +297,7 @@ Or Ale-&gt;getAle]] ] ](stop:)]
 |typed-delay0&gt;[&gt;seduce barmaid]
 &lt;hr color=#00FF21&gt;
 
-&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="19" name="hitOnBarmaid" tags="" position="1826,402">&lt;hr color=#00FF21&gt;
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="19" name="hitOnBarmaid" tags="" position="1845,395">&lt;hr color=#00FF21&gt;
 (live: 2s)[(transition: &quot;dissolve&quot;)[ [[That&#x27;s not a command that I recognize.-&gt;flirtWithBarmaid]] ](stop:)]
 
 &lt;hr color=#00FF21&gt;
@@ -370,7 +374,14 @@ by Collin Eddings
 |typed-delay0&gt;[&gt;attack barkeep]
 &lt;hr color=#00FF21&gt;
 
-&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="26" name="goBasement" tags="" position="2310,1130">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="27" name="xMe" tags="" position="1942,1509">&lt;hr color=#00FF21&gt;
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="26" name="goBasement" tags="" position="2310,1130">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ [[You slip away into the basement. Inside, you see swarms of rats scurrying along the floor and a closed cabinet nearby.-&gt;attackRats]] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;go basement]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="27" name="xMe" tags="" position="1942,1509">&lt;hr color=#00FF21&gt;
 (live: 2s)[(transition: &quot;dissolve&quot;)[ [[&lt;i&gt;&#x27;Wow, I sure look great with all this blood on my robes!&#x27;&lt;/i&gt; you think to yourself, as you steal a glance at yourself in a mirror in this moment of moral victory.-&gt;lootBarkeep]]
 
 -
@@ -414,8 +425,10 @@ You get a BARKEEP APRON and a BARKEEP RAG.
 |typed-delay0&gt;[&gt;get club soda]
 &lt;hr color=#00FF21&gt;
 
-&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="31" name="getAle" tags="" position="1906,978">&lt;hr color=#00FF21&gt;
-(live: 2s)[(transition: &quot;dissolve&quot;)[ You throw the mug of ale down your throat and wipe the foam off your mouth. ](stop:)]
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="31" name="getAle" tags="" position="1930,986">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[(link-reveal:&quot;You throw the mug of ale down your throat and wipe the foam off your mouth. The barkeep immediately snatches your empty mug and begins polishing it compulsively.&quot;)[
+
+[[&quot;Hey, you look like the adventuring type,&quot; says the barkeep. &quot;How &#x27;bouts you clear out those dratted rats in the basement and I&#x27;ll give you some coin?&quot;-&gt;goBasement]] ] ](stop:)]
 
 &lt;hr color=#00FF21&gt;
 |typed&gt;[&gt;get ale]
@@ -697,11 +710,11 @@ You rolled a 1.
 
 (link-reveal: &quot;Praying to the gods for mercy, you chug the vial&#x27;s vile contents.&quot;)[
 
-[[You suddenly start to turn invisible. The town guards burst into the tavern to arrest that wretched dwarf slayer, but will probably have a difficult time arresting an invisible assailant.-&gt;invisibleNude]]
+[[You suddenly turn invisible. Why, it must have been a potion of invisibility! The town guards burst into the tavern to arrest that wretched dwarf slayer, but will probably have a difficult time arresting an invisible assailant.-&gt;invisibleNude]]
 
 -
 
-(link-reveal: &quot;You suddenly burst into green flame. The guards burst into the tavern just in time to watch you comedically flail about the room lighting everything aflame before tumbling to the floor in a pile of ashes. You are dead.&quot;)[
+(link-reveal: &quot;You suddenly burst into green flame. Why, it must have been a potion of green-flame-bursting! The guards burst into the tavern just in time to watch you comedically flail about the room, lighting everything aflame, before tumbling to the floor in a pile of ashes. You are dead.&quot;)[
 
 (link: &quot;Restart? Y/N&quot;)[(goto: &quot;restartReal&quot;)] ] ] ] ](stop:)]
 
@@ -740,11 +753,11 @@ You rolled a 1.
 
 (link-reveal: &quot;Praying to the gods for mercy, you chug the vial&#x27;s vile contents.&quot;)[
 
-[[You suddenly start to turn invisible, leaving just your floating robes. The guards burst into the tavern. &quot;Quick!&quot; says a guard. &quot;He&#x27;s drunk an invisibility potion! Get him before he takes his robe off!&quot;-&gt;invisibleRemoveRobe]]
+[[You suddenly turn invisible, leaving just your floating robes. Why, it must have been a potion of invisibility! The guards burst into the tavern. &quot;Quick!&quot; says a guard. &quot;He&#x27;s drunk an invisibility potion! Get him before he takes his robe off!&quot;-&gt;invisibleRemoveRobe]]
 
 -
 
-(link-reveal: &quot;You suddenly burst into green flame. The guards burst into the tavern just in time to watch you comedically flail about the room lighting everything aflame before tumbling to the floor in a pile of ashes. You are dead.&quot;)[
+(link-reveal: &quot;You suddenly burst into green flame. Why, it must have been a potion of green-flame-bursting! The guards burst into the tavern just in time to watch you comedically flail about the room, lighting everything aflame, before tumbling to the floor in a pile of ashes. You are dead.&quot;)[
 
 (link: &quot;Restart? Y/N&quot;)[(goto: &quot;restartReal&quot;)] ] ] ] ](stop:)]
 
@@ -752,14 +765,219 @@ You rolled a 1.
 |typed-delay0&gt;[&gt;drink potion]
 &lt;hr color=#00FF21&gt;
 
-&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="60" name="invisibleNude" tags="" position="2349,1906">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="61" name="invisibleRemoveRobe" tags="" position="2236,1735">&lt;hr color=#00FF21&gt;
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="60" name="invisibleNude" tags="" position="2349,1906">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="61" name="invisibleRemoveRobe" tags="" position="2235,1735">&lt;hr color=#00FF21&gt;
 (live: 2s)[(transition: &quot;dissolve&quot;)[ [[Look out ladies!-&gt;invisibleNude]] ](stop:)]
 
 &lt;hr color=#00FF21&gt;
 |typed-delay0&gt;[&gt;remove robe]
 &lt;hr color=#00FF21&gt;
 
-&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata></tw-storydata>
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="62" name="attackRats" tags="" position="2445,1255">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ [[You try to smash a rat, but it scurries underneath the closed cabinet next to you. The rats are too quick and too numerous for you to attack them.-&gt;talkRats]] 
+
+-
+
+[[For the next hour, you go on a rat-smashing rampage as you smash all the rats. You sweep the multiple piles of dead rats into the corner by the closet cabinet.-&gt;openCabinet]] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;attack rats]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="63" name="talkRats" tags="" position="2314,1345">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[(link-reveal:&quot;You clear your throat and try to recollect some of the phrases you learned all the way back in seventh grade rat class. &amp;quot;Squeaker squeak, squeak squeakin?&amp;quot;&quot;)[
+
+[[The rats squeak back at you with what you can surmise are rat expletives. On an unrelated note, your hungry nose senses an enticing smell of hot dogs eminating from the cabinet in the corner. &lt;i&gt;Perhaps it&#x27;s worth investigating.&lt;/i&gt;-&gt;openCabinet]]
+
+-
+
+[[&quot;Yo, chillax, homie, we&#x27;ll skedaddle,&quot; says a rat. &quot;We cool.&quot; The rats file out of the room, presumably to camp out in the dark corridors of a low-level dungeon. Now the basement is empty apart from the cabinet in the corner.-&gt;leaveBasement]] ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;talk rats]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="64" name="openCabinet" tags="" position="2623,1345">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[(link-reveal:&quot;You walk up to the large, wooden cabinet and open &#x27;er up. Inside the cabinet, you find:&quot;)[
+
+[[Several cans of rat poison
+A package of sausages
+An old, mysterious book-&gt;bookIsImportant]] ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;open cabinet]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="65" name="bookIsImportant2" tags="" position="2755,1457">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ (link: &quot;You slide all of the barkeep&#x27;s gold into your pocket - well-deserved pay for such an excellent job negotiating with those rats. You notice that as your hand nears the mysterious book, you feel a &lt;i&gt;strange tingling sensation&lt;/i&gt;&quot;)[(set: $sausages to &quot;false&quot;)(goto: &quot;bookIsElvish&quot;)] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;take gold]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="66" name="leaveBasement" tags="" position="2352,1487">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ [[As you turn to leave the basement, you seem to hear a subtle, ghostly voice from the direction of the cabinet that reminds you of your father.-&gt;openCabinet]]
+
+-
+
+[[You ditch this popsicle stand; the cabinet was probably empty anyway.-&gt;talkBarkeepPay]] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;exit basement]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="67" name="talkBarkeepPay" tags="" position="2489,1597">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ [[&quot;Oh,&quot; says the barkeep. &quot;You probably want your payment. You know what? I keep a bit of gold in the cabinet in the basement particularly for adventurin&#x27; folks like you - why don&#x27;t you &lt;i&gt;head back into the basement&lt;/i&gt; and &lt;i&gt;open the cabinet&lt;/i&gt; and help yourself?&quot;-&gt;openCabinetSpecial]] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;talk barkeep]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="68" name="openCabinetSpecial" tags="" position="2624,1464">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[(link-reveal:&quot;You&#x27;re not even in the basement, but you find your way and open up the cabinet in the basement. Inside the cabinet, you find:&quot;)[
+
+[[Several cans of rat poison
+12 gold
+An old, mysterious book-&gt;bookIsSpecial]] ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;open cabinet]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="69" name="bookIsElvish" tags="" position="2885,1389">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ [[Oh, for heaven&#x27;s...-&gt;takeBook]]
+(mouseover-replace: &quot;Oh, for heaven&#x27;s...&quot;)[ As you start to shut the cabinet door, you notice the mysterious book has &lt;i&gt;a picture of a naked Elvish woman&lt;/i&gt; on its spine. ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;exit basement]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="70" name="takeBook" tags="" position="2946,1510">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ (link-reveal: &quot;Like a true scholar of literature, you can&#x27;t get your grubby fingers on this alluring novel fast enough.&quot;)[
+
+[[As you pull the book away from the cabinet shelf, you hear the industrial whine of pulleys and winches as the false panel at the back of the cabinet opens to reveal a dark, narrow cave before you.-&gt;goCave]] ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;take book]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="71" name="bookIsImportant" tags="" position="2752,1340">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ (link: &quot;You slide all of the barkeep&#x27;s sausages into your pocket - they seem pretty old but you can&#x27;t argue with free food. You notice that as your hand nears the mysterious book, you feel a &lt;i&gt;strange tingling sensation&lt;/i&gt;.&quot;)[(set: $sausages to &quot;true&quot;)(goto: &quot;bookIsElvish&quot;)] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;take sausages]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="72" name="goCave" tags="" position="3035,1639">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ [[You proceed with caution down the windy, cavernous passage. You stop as it becomes too dark to see anything.-&gt;getLamp]] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;go cave]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="73" name="getLamp" tags="" position="3115,1517">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ (link-reveal: &quot;As if you knew exactly what to do from previous experience, you conjure up a lamp out of hammerspace and light it by sheer willpower.&quot;)[
+
+(link-reveal: &quot;You now see that you are standing in a small chamber, with the only exits being the passage behind you and a large stone door on the opposite side. A troll stands about six inches from your face, which probably explains the smell. It&#x27;s probably good you stopped when you did.&quot;)[
+
+[[&quot;NONE SHALL PASS!&quot; shouts the troll.-&gt;talkTroll]] ] (if: $sausages is &quot;true&quot;)[(replace: &quot;smell.&quot;)[ smell (if it&#x27;s not those disagreeable sausages in your pocket). ] ] ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;get lamp]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="74" name="talkTroll" tags="" position="3176,1384">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ (link-reveal: &quot;&amp;quot;LISTEN, ADVENTURER!&amp;quot; shouts the troll, still in uncomfortable proximity to you.&quot;)[
+
+(link-reveal: &quot;&amp;quot;ALL VISITORS HERE
+MUST PAY A TOLL,
+THOUGH NOT OF SILVER
+AND NOT OF GOLD.&amp;quot;&quot;)[
+
+(link-reveal: &quot;&amp;quot;ONLY BY WISDOM
+WILL THE SEEKER PASS.
+SO ANSWER THIS RIDDLE
+PULLED STRAIGHT FROM MY HEAD:&amp;quot;&quot;)[
+
+(link-reveal: &quot;&amp;quot;THREE GOOD FRIENDS
+PLAN TO MEET IN MILWAUKEE
+FOR A NICE SUNDAY BRUNCH
+AND A PICKUP GAME OF HOCKEY.&amp;quot;&quot;)[
+
+(link-reveal: &quot;&amp;quot;IF SUZY AND SALLY
+FROM CHICAGO DEPART,
+SUZY, AT ELEVEN,
+HER JOURNEY STARTS.&amp;quot;&quot;)[
+
+(link-reveal: &quot;&amp;quot;SALLY WILL LEAVE
+BUT AN HOUR LATER
+AT TWICE THE SPEED
+OF AN ALLIGATOR.&amp;quot;&quot;)[
+
+(link-reveal: &quot;&amp;quot;THEN THEIR FRIEND ERIC,
+FROM MINNEAPOLIS,
+HE TRAVELS SOUTHWARD
+AT A CONSTANT RATE OF FORTY-FIVE MILES PER HOUR.&amp;quot;&quot;)[
+
+(link-reveal: &quot;&amp;quot;IF SUZY AND SALLY&#x27;S
+DRIVE IS EIGHTY MILES NORTH,
+THEN THAT OF ERIC
+MUST BE TWO HUNDRED MORE.&amp;quot;&quot;)[
+
+(link: &quot;&amp;quot;THE LAST TO ARRIVE
+PAYS FOR ALL OF IT.
+SO WHICH OF THESE THREE
+WILL LAND IN DEEP TROUBLE?&amp;quot;&quot;)[(goto: &quot;blankTroll&quot;)] ]]]]]]]] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;talk troll]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="75" name="blankTroll" tags="" position="3251,1520">&lt;hr color=#00FF21&gt;
+(live: 4s)[(goto: &quot;attackTroll&quot;)]
+
+&lt;hr color=#00FF21&gt;
+&gt;&lt;span class=&quot;blink&quot;&gt;|&lt;/span&gt;
+
+&lt;hr color=#00FF21&gt;</tw-passagedata><tw-passagedata pid="76" name="attackTroll" tags="" position="3305,1646">&lt;hr color=#00FF21&gt;
+(live: 1s)[(transition: &quot;dissolve&quot;)[ [[You chop the fool. The door opens.-&gt;goDoor]] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;attack troll]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="77" name="goDoor" tags="" position="3384,1519">&lt;hr color=#00FF21&gt;
+(live: 1s)[(transition: &quot;dissolve&quot;)[ (link-reveal: &quot;You step through the door and find yourself in an orthogonal stone passage that branches off in many directions. There must be something really great at the end of this labyrinth.&quot;)[
+
+(link-reveal: &quot;Your only exits are:&quot;)[
+
+(link-reveal: &quot;North&quot;)[(set: $north to true)]
+(link-reveal: &quot;South (the way you came)&quot;)[(set: $south to true)](live: 0.1s)[(if: $north is true and $south is true)[
+
+[[Which way do you go?-&gt;mazeLoop]] (stop:) ] ] ] ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;go door]
+&lt;hr color=#00FF21&gt;(set: $north to true)(set: $west to false)(set: $east to false)(set: $south to false)(set: $loopCount to 0)
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="78" name="mazeLoop" tags="" position="3453,1395">&lt;hr color=#00FF21&gt;(set: $dirInt to 0)(if: $north is true and (random: 0, $dirInt) is 0)[(set: $dirInt to $dirInt + 1)(set: $direction to &quot;north&quot;)](if: $east is true and (random: 0, $dirInt) is 0)[(set: $dirInt to $dirInt + 1)(set: $direction to &quot;east&quot;)](if: $south is true and (random: 0, $dirInt) is 0)[(set: $dirInt to $dirInt + 1)(set: $direction to &quot;south&quot;)](if: $west is true and (random: 0, $dirInt) is 0)[(set: $direction to &quot;west&quot;)](set: $north to false)(set: $east to false)(set: $south to false)(set: $west to false)(set: $selected to false)
+(live: 1s)[(transition: &quot;dissolve&quot;)[ (link-reveal: &quot;You walk %DIR%. Your exits are now:&quot;)[
+
+(link-reveal: &quot;North&quot;)[(set: $north to true)(set: $selected to true)]
+(link-reveal: &quot;East&quot;)[(set: $east to true)(set: $selected to true)]
+(link-reveal: &quot;South&quot;)[(set: $south to true)(set: $selected to true)]
+(link-reveal: &quot;West&quot;)[(set: $west to true)(set: $selected to true)](live: 0.1s)[(if: $selected is true)[
+
+(link: &quot;Where do you go?&quot;)[(set: $loopCount to $loopCount + 1)(goto: &quot;mazeLoop&quot;)](stop:)]] ] (replace: &quot;%DIR%&quot;)[$direction] (if: $loopCount &gt;= 5)[
+
+-
+
+[[At long last, you come across a set of stairs that seem to lead out of the labyrinth! Huzzah!-&gt;exitMaze]] ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;go %DIR%]
+&lt;hr color=#00FF21&gt;(replace: &quot;%DIR%&quot;)[$direction]
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="79" name="exitMaze" tags="" position="3518,1523">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,o=!1,i=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){o=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(o)throw i}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
