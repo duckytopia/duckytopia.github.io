@@ -343,7 +343,7 @@ Or Ale-&gt;getAle]] ] ](stop:)]
 
 (link-reveal: &quot;After a passionate night with the barmaid, you realize that you have &lt;i&gt;completely failed your father&#x27;s dying request!&lt;/i&gt; You become chronically depressed and spend the rest of your days squandering your father&#x27;s inheritance on liquor and whores, but nothing can fill the hole left in your heart. &lt;i&gt;(Perhaps you should have read that letter from your father in your inventory?)&lt;/i&gt;&quot;)[
 
-(link: &quot;Restart? Y/N&quot;)[(goto: &quot;restartReal&quot;)] ] ](stop:)]
+(link: &quot;Restart? Y/N&quot;)[(goto: &quot;restart&quot;)] ] ](stop:)]
 
 &lt;hr color=#00FF21&gt;
 |typed-delay0&gt;[&gt;y]
@@ -395,11 +395,11 @@ by Collin Eddings
 &lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="28" name="lootBarkeep" tags="" position="2105,1443">&lt;hr color=#00FF21&gt;
 (live: 2s)[(transition: &quot;dissolve&quot;)[(link-reveal: &quot;As the city guards stand outside and command you to leave the tavern, you hop on over the tavern counter and focus your efforts on turning out the pockets of the grizzly remains of the old barkeep.&quot;)[
 
-You get a BARKEEP APRON and a BARKEEP RAG.
+[[You get a BARKEEP APRON and a BARKEEP RAG.-&gt;deadEnd]]
 
 -
 
-[[You get a BARKEEP APRON and a MYSTERIOUS POTION.-&gt;drinkPotion]] ](stop:)]
+[[You get a BARKEEP APRON and a MYSTERIOUS POTION.-&gt;drinkPotion]] ] ](stop:)]
 
 &lt;hr color=#00FF21&gt;
 |typed-delay0&gt;[&gt;loot barkeep]
@@ -413,11 +413,11 @@ You get a BARKEEP APRON and a BARKEEP RAG.
 &lt;hr color=#00FF21&gt;
 
 &lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="30" name="getClubSoda" tags="" position="1792,1094">&lt;hr color=#00FF21&gt;
-(live: 2s)[(transition: &quot;dissolve&quot;)[ [[Oh, I listed that last one as a joke. All we really have is ale, anyway.-&gt;getAle]]
+(live: 2s)[(transition: &quot;dissolve&quot;)[ [[&quot;Oh, I listed that last one as a joke. All we really have is ale, anyway.&quot;-&gt;getAle]]
 
 -
 
-(link-reveal: &quot;Alright, sir. Here&#x27;s your club soda.&quot;)[
+(link-reveal: &quot;&amp;quot;Alright, sir. Here&#x27;s your club soda.&amp;quot;&quot;)[
 
 [[The barkeep snickers as he slides a mug of ale on the counter in front of you.-&gt;getAle]] ] ](stop:)]
 
@@ -426,7 +426,7 @@ You get a BARKEEP APRON and a BARKEEP RAG.
 &lt;hr color=#00FF21&gt;
 
 &lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="31" name="getAle" tags="" position="1930,986">&lt;hr color=#00FF21&gt;
-(live: 2s)[(transition: &quot;dissolve&quot;)[(link-reveal:&quot;You throw the mug of ale down your throat and wipe the foam off your mouth. The barkeep immediately snatches your empty mug and begins polishing it compulsively.&quot;)[
+(live: 2s)[(transition: &quot;dissolve&quot;)[(link-reveal:&quot;You throw the contents of the mug of ale down your throat and wipe the foam off your mouth. The barkeep immediately snatches your empty mug and begins polishing it compulsively.&quot;)[
 
 [[&quot;Hey, you look like the adventuring type,&quot; says the barkeep. &quot;How &#x27;bouts you clear out those dratted rats in the basement and I&#x27;ll give you some coin?&quot;-&gt;goBasement]] ] ](stop:)]
 
@@ -556,7 +556,7 @@ You rolled a $rolled.
 
 (link-reveal: &quot;Feeling a sudden bout of benevolence, from, uh, consuming the chicken leg, I guess, you pull out a giant bag of gold, &lt;i&gt;your entire inheritance&lt;/i&gt;, and plop it down on the table in front of the dwarves.&quot;)[
 
-(link-reveal: &quot;&amp;quot;Well, I ain&#x27;t never seen someone bet so much over a game of knucklebones...&amp;quot; says a confused dwarf. &amp;quot;So, who wants to play a game of knucklebone for this, uh, 853 gold? Perhaps this guy will win it back, &lt;i&gt;because it might be important to him.&lt;/i&gt;&amp;quot;&quot;)[
+(link-reveal: &quot;&amp;quot;Well, I ain&#x27;t never seen someone bet so much over a game of knucklebones...&amp;quot; says a confused dwarf. &amp;quot;So, who wants to play a game of knucklebones for this, uh, 853 gold? Perhaps this guy will win it back, &lt;i&gt;because it might be important to him.&lt;/i&gt;&amp;quot;&quot;)[
 
 [[Play a game of knucklebones with dwarves? Y/N-&gt;dwarvesHoldGold]] ]]]](stop:)]
 
@@ -748,7 +748,7 @@ You rolled a 1.
 |typed-delay0&gt;[&gt;give barkeep note from haggin]
 &lt;hr color=#00FF21&gt;
 
-&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="59" name="drinkPotion" tags="" position="2177,1610">&lt;hr color=#00FF21&gt;
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="59" name="drinkPotion" tags="" position="2087,1644">&lt;hr color=#00FF21&gt;
 (live: 2s)[(transition: &quot;dissolve&quot;)[(link-reveal: &quot;Well, here goes nothing.&quot;)[
 
 (link-reveal: &quot;Praying to the gods for mercy, you chug the vial&#x27;s vile contents.&quot;)[
@@ -777,7 +777,7 @@ You rolled a 1.
 
 -
 
-[[For the next hour, you go on a rat-smashing rampage as you smash all the rats. You sweep the multiple piles of dead rats into the corner by the closet cabinet.-&gt;openCabinet]] ](stop:)]
+[[For the next hour, you go on a rat-smashing rampage as you smash all the rats. You sweep the multiple piles of dead rats into the corner by the closed cabinet.-&gt;openCabinet]] ](stop:)]
 
 &lt;hr color=#00FF21&gt;
 |typed-delay0&gt;[&gt;attack rats]
@@ -959,13 +959,13 @@ WILL LAND IN DEEP TROUBLE?&amp;quot;&quot;)[(goto: &quot;blankTroll&quot;)] ]]]]
 |typed-delay0&gt;[&gt;go door]
 &lt;hr color=#00FF21&gt;(set: $north to true)(set: $west to false)(set: $east to false)(set: $south to false)(set: $loopCount to 0)
 
-&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="78" name="mazeLoop" tags="" position="3453,1395">&lt;hr color=#00FF21&gt;(set: $dirInt to 0)(if: $north is true and (random: 0, $dirInt) is 0)[(set: $dirInt to $dirInt + 1)(set: $direction to &quot;north&quot;)](if: $east is true and (random: 0, $dirInt) is 0)[(set: $dirInt to $dirInt + 1)(set: $direction to &quot;east&quot;)](if: $south is true and (random: 0, $dirInt) is 0)[(set: $dirInt to $dirInt + 1)(set: $direction to &quot;south&quot;)](if: $west is true and (random: 0, $dirInt) is 0)[(set: $direction to &quot;west&quot;)](set: $north to false)(set: $east to false)(set: $south to false)(set: $west to false)(set: $selected to false)
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="78" name="mazeLoop" tags="" position="3453,1395">&lt;hr color=#00FF21&gt;(set: $dirInt to 0)(if: $north is true and (random: 0, $dirInt) is 0)[(set: $dirInt to $dirInt + 1)(set: $direction to &quot;north&quot;)](if: $east is true and (random: 0, $dirInt) is 0)[(set: $dirInt to $dirInt + 1)(set: $direction to &quot;east&quot;)](if: $south is true and (random: 0, $dirInt) is 0)[(set: $dirInt to $dirInt + 1)(set: $direction to &quot;south&quot;)](if: $west is true and (random: 0, $dirInt) is 0)[(set: $direction to &quot;west&quot;)](set: $north to false)(set: $east to false)(set: $south to false)(set: $west to false)(set: $selected to 0)
 (live: 1s)[(transition: &quot;dissolve&quot;)[ (link-reveal: &quot;You walk %DIR%. Your exits are now:&quot;)[
 
-(link-reveal: &quot;North&quot;)[(set: $north to true)(set: $selected to true)]
-(link-reveal: &quot;East&quot;)[(set: $east to true)(set: $selected to true)]
-(link-reveal: &quot;South&quot;)[(set: $south to true)(set: $selected to true)]
-(link-reveal: &quot;West&quot;)[(set: $west to true)(set: $selected to true)](live: 0.1s)[(if: $selected is true)[
+(link-reveal: &quot;North&quot;)[(set: $north to true)(set: $selected to $selected + 1)]
+(link-reveal: &quot;East&quot;)[(set: $east to true)(set: $selected to $selected + 1)]
+(link-reveal: &quot;South&quot;)[(set: $south to true)(set: $selected to $selected + 1)]
+(link-reveal: &quot;West&quot;)[(set: $west to true)(set: $selected to $selected + 1)](live: 0.1s)[(if: ($selected is 1 and $loopCount &gt; 0) or ($selected &gt; 1))[
 
 (link: &quot;Where do you go?&quot;)[(set: $loopCount to $loopCount + 1)(goto: &quot;mazeLoop&quot;)](stop:)]] ] (replace: &quot;%DIR%&quot;)[$direction] (if: $loopCount &gt;= 5)[
 
@@ -977,7 +977,7 @@ WILL LAND IN DEEP TROUBLE?&amp;quot;&quot;)[(goto: &quot;blankTroll&quot;)] ]]]]
 |typed-delay0&gt;[&gt;go %DIR%]
 &lt;hr color=#00FF21&gt;(replace: &quot;%DIR%&quot;)[$direction]
 
-&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="79" name="exitMaze" tags="" position="3518,1523">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="79" name="exitMaze" tags="" position="3518,1523">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="80" name="deadEnd" tags="" position="2244,1565">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,o=!1,i=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){o=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(o)throw i}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
