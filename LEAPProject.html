@@ -15,13 +15,11 @@
 
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
 
-</script><tw-passagedata pid="1" name="Start" tags="" position="412,188">(set: $score to 0)
-You are a Human Resources employee at a large corporation NatureShare.
+</script><tw-passagedata pid="1" name="Start" tags="" position="412,188">(set: $score to 0)You are a Human Resources employee at a large corporation NatureShare.
 
 Your job includes hiring new employees, evaluating current employees, and resolving any conflicts between employees within the company.
 
-[[Begin-&gt;hireFromFour]]</tw-passagedata><tw-passagedata pid="2" name="hireFromFour" tags="" position="412,338">
-You are tasked with hiring a new employee for the company. You have narrowed down the applicants to four qualified ones.
+[[Begin-&gt;hireFromFour]]</tw-passagedata><tw-passagedata pid="2" name="hireFromFour" tags="" position="412,338">You are tasked with hiring a new employee for the company. You have narrowed down the applicants to four qualified ones.
 
 A black man who graduated from a prestigious university, but is rather young and inexperienced.
 
@@ -33,36 +31,33 @@ An older white man that already has 40 years of relevant experience in the posit
 
 Who do you choose?
 
-[[The black man-&gt;hireBlackMan]]
+(link: &quot;The black man&quot;)[(set: $score to $score + 5)(goto: &quot;hireBlackMan&quot;)]
 
-[[The pregnant woman-&gt;hirePregnantWoman]]
+(link: &quot;The pregnant woman&quot;)[(set: $score to $score + 3)(goto: &quot;hirePregnantWoman&quot;)]
 
-[[The man from Pakistan-&gt;hirePakistani]]
+(link: &quot;The man from Pakistan&quot;)[(set: $score to $score + 3)(goto: &quot;hirePakistani&quot;)]
 
-[[The older white man-&gt;hireOlderMan]]</tw-passagedata><tw-passagedata pid="3" name="hireBlackMan" tags="" position="60,630">(set: $score to $score + 5)
-The new employee settles in well and is very productive, but soon raises a complaint with you. He complains that the copier is placed closer to the white workers in the office, forcing himself and other black workers to walk across the office to make a copy. He requests that you move the copier to a more central location.
+(link: &quot;The older white man&quot;)[(set: $score to $score + 5)(goto: &quot;hireOlderMan&quot;)]</tw-passagedata><tw-passagedata pid="3" name="hireBlackMan" tags="" position="94,530">The new employee settles in well and is very productive, but soon raises a complaint with you. He complains that the copier is placed closer to the white workers in the office, forcing himself and other black workers to walk across the office to make a copy. He requests that you move the copier to a more central location.
 
 What will you do?
 
 (link: &quot;Move the copier&quot;)[(set: $score to $score + 4)(goto: &quot;racistComments&quot;)]
 
-(link: &quot;Ignore the complaint&quot;)[(set: $score to $score + 3)(goto: &quot;racistComments&quot;)]</tw-passagedata><tw-passagedata pid="4" name="hirePregnantWoman" tags="" position="326,524">(set: $score to $score + 3)
-The new, pregnant employee requests 3 hours off on short notice for a doctor’s appointment. It is near the end of the quarter and most employees are working overtime - every minute of the workday is needed. The next available appointment with her doctor is in 3 weeks.
+(link: &quot;Ignore the complaint&quot;)[(set: $score to $score + 3)(goto: &quot;racistComments&quot;)]</tw-passagedata><tw-passagedata pid="4" name="hirePregnantWoman" tags="" position="326,524">The new, pregnant employee requests 3 hours off on short notice for a doctor’s appointment. It is near the end of the quarter and most employees are working overtime - every minute of the workday is needed. The next available appointment with her doctor is in 3 weeks.
 
 What will you do?
 
 (link: &quot;Require the employee to continue working and reschedule the appointment at a less busy time.&quot;)[(set: $score to $score + 1)(goto: &quot;rescheduleAppt&quot;)]
 
-(link: &quot;Allow the employee to go, asking that she make up the lost time over the weeked.&quot;)[(set: $score to $score + 3)(goto: &quot;racistComments&quot;)]</tw-passagedata><tw-passagedata pid="5" name="hirePakistani" tags="" position="536,481">(set: $score to $score + 3)
-It is becoming a serious problem that the new employee cannot communicate properly with his co-workers. 
+(link: &quot;Allow the employee to go, asking that she make up the lost time over the weeked.&quot;)[(set: $score to $score + 3)(goto: &quot;racistComments&quot;)]</tw-passagedata><tw-passagedata pid="5" name="hirePakistani" tags="" position="536,481">It is becoming a serious problem that the new employee cannot communicate properly with his co-workers. 
 
 What will you do?
 
-(link: &quot;Use company funds to put the new employee through an English course.&quot;)[(set: $score to $score + 5)(goto: &quot;payForLessons&quot;)]
+(link: &quot;Use company funds to put the new employee through an English course.&quot;)[(set: $score to $score + 5)(goto: &quot;racistComments&quot;)]
 
-(link: &quot;Require the new employee to attend an English course at his own expense.&quot;)[(set: $score to $score + 2)(goto: &quot;makeHimPay&quot;)]
+(link: &quot;Require the new employee to attend an English course at his own expense.&quot;)[(set: $score to $score + 2)(goto: &quot;racistComments&quot;)]
 
-[[Fire the new employee and hire one of the other applicants.-&gt;fireNewEmployee]]</tw-passagedata><tw-passagedata pid="6" name="hireOlderMan" tags="" position="928,418">Your new worker is having difficulties completing his work due to a recently discovered heart condition.
+[[Fire the new employee and hire one of the other applicants.-&gt;fireNewEmployee]]</tw-passagedata><tw-passagedata pid="6" name="hireOlderMan" tags="" position="703,379">Your new worker is having difficulties completing his work due to a recently discovered heart condition.
 
 What will you do?
 
@@ -70,8 +65,7 @@ What will you do?
 
 (link: &quot;Transfer him to a less demanding role in the company.&quot;)[(set: $score to $score + 4)(goto: &quot;racistComments&quot;)]
 
-(link: &quot;Reduce his weekly hours.&quot;)[(set: $score to $score + 2)(goto: &quot;racistComments&quot;)]</tw-passagedata><tw-passagedata pid="7" name="rescheduleAppt" tags="" position="252,646">(set: $score to $score + 1)
-The employee suffers a miscarriage because she missed the vital appointment with her doctor. She is now taking legal action against the company. The legal team asks for your input on whether the company should defend the case or settle out of court.
+(link: &quot;Reduce his weekly hours.&quot;)[(set: $score to $score + 2)(goto: &quot;racistComments&quot;)]</tw-passagedata><tw-passagedata pid="7" name="rescheduleAppt" tags="" position="277,671">The employee suffers a miscarriage because she missed the vital appointment with her doctor. She is now taking legal action against the company. The legal team asks for your input on whether the company should defend the case or settle out of court.
 
 What will you recommend?
 
@@ -85,25 +79,27 @@ What will you do?
 
 (link: &quot;Identify and meet with the offenders and notify them that verbal harassment is grounds for termination.&quot;)[(set: $score to $score + 2)(goto: &quot;complaintsCease&quot;)]
 
-(link: &quot;Host a meeting to explain to employees that this behavior is unacceptable cannot be allowed to continue.&quot;)[(set: $score to $score + 4)(goto: &quot;complaintsLessen&quot;)]</tw-passagedata><tw-passagedata pid="9" name="payForLessons" tags="" position="521,622">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="10" name="makeHimPay" tags="" position="634,606">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="11" name="fireNewEmployee" tags="" position="755,516">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="12" name="racistEmployee" tags="" position="330,957">One employee becomes a repeat offender with daily complaints coming in about their behavior.
+(link: &quot;Host a meeting to explain to employees that this behavior is unacceptable cannot be allowed to continue.&quot;)[(set: $score to $score + 4)(goto: &quot;complaintsLessen&quot;)]</tw-passagedata><tw-passagedata pid="9" name="fireNewEmployee" tags="" position="747,531">Your manager is angry that you&#x27;ve fired an employee so quickly after hiring them, and you&#x27;re placed on probation.
+
+[[Continue-&gt;endGame]]</tw-passagedata><tw-passagedata pid="10" name="racistEmployee" tags="" position="330,957">One employee becomes a repeat offender with daily complaints coming in about their behavior.
 
 What will you do?
 
 (link: &quot;Identify and meet with the offenders and notify them that verbal harassment is grounds for termination.&quot;)[(set: $score to $score + 1)(goto: &quot;complaintsCease&quot;)]
 
-(link: &quot;Host a meeting to explain to employees that this behavior is unacceptable cannot be allowed to continue.&quot;)[(set: $score to $score + 2)(goto: &quot;complaintsLessen&quot;)]</tw-passagedata><tw-passagedata pid="13" name="complaintsLessen" tags="" position="571,959">Complaints of offenses lessen, but are still submitted occasionally.
+(link: &quot;Host a meeting to explain to employees that this behavior is unacceptable cannot be allowed to continue.&quot;)[(set: $score to $score + 2)(goto: &quot;complaintsLessen&quot;)]</tw-passagedata><tw-passagedata pid="11" name="complaintsLessen" tags="" position="571,959">Complaints of offenses lessen, but are still submitted occasionally.
 
 What will you do?
 
 (link: &quot;Consider the matter resolved.&quot;)[(set: $score to $score + 2)(goto: &quot;moreWomen&quot;)]
 
-(link: &quot;Identify and meet with the offenders and notify them that verbal harassment is grounds for termination.&quot;)[(set: $score to $score + 1)(goto: &quot;complaintsCease&quot;)]</tw-passagedata><tw-passagedata pid="14" name="complaintsCease" tags="" position="452,955">Offenses and complaints appear to cease.
+(link: &quot;Identify and meet with the offenders and notify them that verbal harassment is grounds for termination.&quot;)[(set: $score to $score + 1)(goto: &quot;complaintsCease&quot;)]</tw-passagedata><tw-passagedata pid="12" name="complaintsCease" tags="" position="452,955">Offenses and complaints appear to cease.
 
 Will you do anything further?
 
 (link: &quot;Consider the matter resolved.&quot;)[(set: $score to $score + 2)(goto: &quot;moreWomen&quot;)]
 
-(link: &quot;Maintain surveillance on the offenders.&quot;)[(set: $score to $score + 1)(goto: &quot;moreWomen&quot;)]</tw-passagedata><tw-passagedata pid="15" name="moreWomen" tags="" position="454,1207">The public is complaining that yoru company is male dominated and looks down on women. As a result, you have been tasked with ensuring at least 30% of the employees are female. However, only 20% of your applicants are female and only 14% of them qualify.
+(link: &quot;Maintain surveillance on the offenders.&quot;)[(set: $score to $score + 1)(goto: &quot;moreWomen&quot;)]</tw-passagedata><tw-passagedata pid="13" name="moreWomen" tags="" position="454,1207">The public is complaining that yoru company is male dominated and looks down on women. As a result, you have been tasked with ensuring at least 30% of the employees are female. However, only 20% of your applicants are female and only 14% of them qualify.
 
 What will you do?
 
@@ -111,27 +107,27 @@ What will you do?
 
 (link: &quot;Hire all of the female applicants, attempting to meet the quota. The diversity of the workforce could actually improve productivity, even if some of the applicants aren&#x27;t as qualified.&quot;)[(set: $score to $score + 1)(goto: &quot;specialTreatment&quot;)]
 
-(link: &quot;Start a campaign that will encourage more women to apply, so you have a larger application base.&quot;)[(set: $score to $score + 5)(goto: &quot;moreApplicants&quot;)]</tw-passagedata><tw-passagedata pid="16" name="specialTreatment" tags="" position="299,1337">You receive complaints from some of the employees that have worked at the company for a long time that these workers are getting special treatment because they are women.
+(link: &quot;Start a campaign that will encourage more women to apply, so you have a larger application base.&quot;)[(set: $score to $score + 5)(goto: &quot;moreApplicants&quot;)]</tw-passagedata><tw-passagedata pid="14" name="specialTreatment" tags="" position="299,1337">You receive complaints from some of the employees that have worked at the company for a long time that these workers are getting special treatment because they are women.
 
 What will you do?
 
 (link: &quot;Assure them that this is not the case.&quot;)[(set: $score to $score + 1)(goto: &quot;endGame&quot;)]
 
-(link: &quot;Inform them of the quota and let them know their hard work has not been overlooked.&quot;)[(set: $score to $score + 1)(goto: &quot;endFemale&quot;)]</tw-passagedata><tw-passagedata pid="17" name="stillFemaleComplaints" tags="" position="451,1340">You find that while your workforce is now more than 14% women, the female employees are filing complaints that they still feel segregated and undervalued.
+(link: &quot;Inform them of the quota and let them know their hard work has not been overlooked.&quot;)[(set: $score to $score + 1)(goto: &quot;endFemale&quot;)]</tw-passagedata><tw-passagedata pid="15" name="stillFemaleComplaints" tags="" position="451,1340">You find that while your workforce is now more than 14% women, the female employees are filing complaints that they still feel segregated and undervalued.
 
 What will you do?
 
 (link: &quot;Increase their pay and give early promotions to many of the women at the company.&quot;)[(set: $score to $score + 2)(goto: &quot;specialTreatment&quot;)]
 
-(link: &quot;Assign the new employees to project teams where they feel valued and they work with existing employees.&quot;)[(set: $score to $score + 4)(goto: &quot;endFemale&quot;)]</tw-passagedata><tw-passagedata pid="18" name="moreApplicants" tags="" position="601,1339">After the company&#x27;s campaign has been running for a while, you find that 35% of your applicants are now female, but still only 25% of them qualify.
+(link: &quot;Assign the new employees to project teams where they feel valued and they work with existing employees.&quot;)[(set: $score to $score + 4)(goto: &quot;endFemale&quot;)]</tw-passagedata><tw-passagedata pid="16" name="moreApplicants" tags="" position="601,1339">After the company&#x27;s campaign has been running for a while, you find that 35% of your applicants are now female, but still only 25% of them qualify.
 
 What will you do?
 
 (link: &quot;Hire only the qualified women and hire qualified male applicants for the other positions. Hiring unqualified people only expends valuable resources.&quot;)[(set: $score to $score + 2)(goto: &quot;stillFemaleComplaints&quot;)]
 
-(link: &quot;Hire all of the female applicants, attempting to meet the quota. The diversity of the workforce could actually improve productivity, even if some of the applicants aren&#x27;t as qualified.&quot;)[(set: $score to $score + 1)(goto: &quot;specialTreatment&quot;)]</tw-passagedata><tw-passagedata pid="19" name="endFemale" tags="" position="456,1491">The employees are no longer complaining, and management is advertising the rapid increase in women in important positions in the company, quelling the public.
+(link: &quot;Hire all of the female applicants, attempting to meet the quota. The diversity of the workforce could actually improve productivity, even if some of the applicants aren&#x27;t as qualified.&quot;)[(set: $score to $score + 1)(goto: &quot;specialTreatment&quot;)]</tw-passagedata><tw-passagedata pid="17" name="endFemale" tags="" position="456,1491">The employees are no longer complaining, and management is advertising the rapid increase in women in important positions in the company, quelling the public.
 
-[[Continue-&gt;endGame]]</tw-passagedata><tw-passagedata pid="20" name="endGame" tags="" position="456,1622">Your score: $score
+[[Continue-&gt;endGame]]</tw-passagedata><tw-passagedata pid="18" name="endGame" tags="" position="456,1622">Your score: $score
 
 Thanks for playing!</tw-passagedata></tw-storydata>
 
