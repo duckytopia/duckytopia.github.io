@@ -11,7 +11,9 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="LEAP Project" startnode="1" creator="Twine" creator-version="2.1.1" ifid="F7CAE5DB-6DAC-4D9D-B431-57554A91C381" format="Harlowe" format-version="1.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+<tw-storydata name="LEAP Project" startnode="1" creator="Twine" creator-version="2.1.1" ifid="F7CAE5DB-6DAC-4D9D-B431-57554A91C381" format="Harlowe" format-version="1.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar{
+	visibility: hidden
+}
 
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
 
@@ -125,7 +127,7 @@ What will you do?
 
 (link: &quot;Hire only the qualified women and hire qualified male applicants for the other positions. Hiring unqualified people only expends valuable resources.&quot;)[(set: $score to $score + 2)(goto: &quot;stillFemaleComplaints&quot;)]
 
-(link: &quot;Hire all of the female applicants, attempting to meet the quota. The diversity of the workforce could actually improve productivity, even if some of the applicants aren&#x27;t as qualified.&quot;)[(set: $score to $score + 1)(goto: &quot;specialTreatment&quot;)]</tw-passagedata><tw-passagedata pid="17" name="endFemale" tags="" position="456,1491">The employees are no longer complaining, and management is advertising the rapid increase in women in important positions in the company, quelling the public.
+(link: &quot;Hire all of the female applicants, attempting to meet the quota. The diversity of the workforce could actually improve productivity, even if some of the applicants aren&#x27;t as qualified.&quot;)[(set: $score to $score + 1)(goto: &quot;specialTreatment&quot;)]</tw-passagedata><tw-passagedata pid="17" name="endFemale" tags="" position="456,1484">The employees are no longer complaining, and management is advertising the rapid increase in women in important positions in the company, quelling the public.
 
 [[Continue-&gt;endGame]]</tw-passagedata><tw-passagedata pid="18" name="endGame" tags="" position="456,1622">Your score: $score
 
