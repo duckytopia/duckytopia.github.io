@@ -78,11 +78,13 @@ tw-link:hover.visited
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">/*! typed.js integration module for Harlowe */
 !function(){"use strict";var getInlineOptions=function(name){var match,options={},typedRe=/^typed(?:-(\w+))+\b$/,parseRe=/-(speed|delay)(\d+)\b/g;if("typed"!==name&&typedRe.test(name))for(;null!==(match=parseRe.exec(name));)switch(match[1]){case"speed":options.typeSpeed=+match[2];break;case"delay":options.startDelay=+match[2]}return options},typedCallbackFactory=function(el,callback){return function(){var $outer=jQuery(el),$inner=jQuery('<div class="typedjs-text-wrapper" style="display:block;position:absolute;left:0;top:0;"><span class="typed"></span></div>'),$source=$outer.children('tw-hook[name|="typed"]'),options=jQuery.extend({typeSpeed:40,startDelay:400},getInlineOptions($source.attr("name")),{strings:[$source.html()]});"function"==typeof callback&&(options.callback=callback),$outer.append($inner),$inner.children().typed(options)}};window.startTypedModule=function(){jQuery('tw-hook[name|="typed"]').addClass("typed").css("visibility","hidden").wrap('<div class="typedjs-outer-wrapper" style="display:block;position:relative;"></div>');for(var $elements=jQuery("tw-passage .typedjs-outer-wrapper"),callback=null,i=$elements.length-1;i>=0;--i)callback=typedCallbackFactory($elements[i],callback);"function"==typeof callback&&callback()}}();
 
 /!* typed.js */
 !function(t){"use strict";var s=function(s,e){this.el=t(s),this.options=t.extend({},t.fn.typed.defaults,e),this.isInput=this.el.is("input"),this.attr=this.options.attr,this.showCursor=this.isInput?!1:this.options.showCursor,this.elContent=this.attr?this.el.attr(this.attr):this.el.text(),this.contentType=this.options.contentType,this.typeSpeed=this.options.typeSpeed,this.startDelay=this.options.startDelay,this.backSpeed=this.options.backSpeed,this.backDelay=this.options.backDelay,this.strings=this.options.strings,this.strPos=0,this.arrayPos=0,this.stopNum=0,this.loop=this.options.loop,this.loopCount=this.options.loopCount,this.curLoop=0,this.stop=!1,this.cursorChar=this.options.cursorChar,this.shuffle=this.options.shuffle,this.sequence=[],this.build()};s.prototype={constructor:s,init:function(){var t=this;t.timeout=setTimeout(function(){for(var s=0;s<t.strings.length;++s)t.sequence[s]=s;t.shuffle&&(t.sequence=t.shuffleArray(t.sequence)),t.typewrite(t.strings[t.sequence[t.arrayPos]],t.strPos)},t.startDelay)},build:function(){this.showCursor===!0&&(this.cursor=t('<span class="typed-cursor">'+this.cursorChar+"</span>"),this.el.after(this.cursor)),this.init()},typewrite:function(t,s){if(this.stop!==!0){var e=Math.round(70*Math.random())+this.typeSpeed,o=this;o.timeout=setTimeout(function(){var e=0,r=t.substr(s);if("^"===r.charAt(0)){var i=1;/^\^\d+/.test(r)&&(r=/\d+/.exec(r)[0],i+=r.length,e=parseInt(r)),t=t.substring(0,s)+t.substring(s+i)}if("html"===o.contentType){var n=t.substr(s).charAt(0);if("<"===n||"&"===n){var a="",h="";for(h="<"===n?">":";";t.substr(s).charAt(0)!==h;)a+=t.substr(s).charAt(0),s++;s++,a+=h}}o.timeout=setTimeout(function(){if(s===t.length){if(o.options.onStringTyped(o.arrayPos),o.arrayPos===o.strings.length-1&&(o.options.callback(),o.curLoop++,o.loop===!1||o.curLoop===o.loopCount))return;o.timeout=setTimeout(function(){o.backspace(t,s)},o.backDelay)}else{0===s&&o.options.preStringTyped(o.arrayPos);var e=t.substr(0,s+1);o.attr?o.el.attr(o.attr,e):o.isInput?o.el.val(e):"html"===o.contentType?o.el.html(e):o.el.text(e),s++,o.typewrite(t,s)}},e)},e)}},backspace:function(t,s){if(this.stop!==!0){var e=Math.round(70*Math.random())+this.backSpeed,o=this;o.timeout=setTimeout(function(){if("html"===o.contentType&&">"===t.substr(s).charAt(0)){for(var e="";"<"!==t.substr(s).charAt(0);)e-=t.substr(s).charAt(0),s--;s--,e+="<"}var r=t.substr(0,s);o.attr?o.el.attr(o.attr,r):o.isInput?o.el.val(r):"html"===o.contentType?o.el.html(r):o.el.text(r),s>o.stopNum?(s--,o.backspace(t,s)):s<=o.stopNum&&(o.arrayPos++,o.arrayPos===o.strings.length?(o.arrayPos=0,o.shuffle&&(o.sequence=o.shuffleArray(o.sequence)),o.init()):o.typewrite(o.strings[o.sequence[o.arrayPos]],s))},e)}},shuffleArray:function(t){var s,e,o=t.length;if(o)for(;--o;)e=Math.floor(Math.random()*(o+1)),s=t[e],t[e]=t[o],t[o]=s;return t},reset:function(){var t=this;clearInterval(t.timeout);var s=this.el.attr("id");this.el.after('<span id="'+s+'"/>'),this.el.remove(),"undefined"!=typeof this.cursor&&this.cursor.remove(),t.options.resetCallback()}},t.fn.typed=function(e){return this.each(function(){var o=t(this),r=o.data("typed"),i="object"==typeof e&&e;r||o.data("typed",r=new s(this,i)),"string"==typeof e&&r[e]()})},t.fn.typed.defaults={strings:["These are the default values...","You know what you should do?","Use your own!","Have a great day!"],typeSpeed:0,startDelay:0,backSpeed:0,shuffle:!1,backDelay:500,loop:!1,loopCount:!1,showCursor:!0,cursorChar:"|",attr:null,contentType:"html",callback:function(){},preStringTyped:function(){},onStringTyped:function(){},resetCallback:function(){}}}(window.jQuery);
+
 
 
 
@@ -262,7 +264,7 @@ Torch (unlit)-&gt;eatChickenLeg]] ] ](stop:)]
 |typed-delay0&gt;[&gt;remove robe]
 &lt;hr color=#00FF21&gt;
 
-&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="16" name="talkBarkeepHero" tags="" position="1949,1195">&lt;hr color=#00FF21&gt;
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="16" name="talkBarkeepHero" tags="" position="1949,1195">(set: $dwarvesDead to true)&lt;hr color=#00FF21&gt;
 (live: 2s)[(transition: &quot;dissolve&quot;)[(link-reveal:&quot;Amongst the chaos inside the tavern as its patrons flee, you saunter on up to the barkeep and initiate a conversation about the recent weather.&quot;)[
 
 [[&quot;Who the &lt;i&gt;blazes&lt;/i&gt; do you think you are? Mr. Just-Walks-On-In-To-Any-Old-Tavern-And-Murders-Half-The-People-Inside!&quot; yells the barkeep. &quot;I&#x27;m trying to run a business here, I don&#x27;t need Stabby Magoo driving off all my customers! Get out of here and never come back!&quot;-&gt;attackBarkeep]] 
@@ -618,7 +620,7 @@ These are only some of the verbs in the game, many situational verbs exist. For 
 &lt;hr color=#00FF21&gt;
 
 &lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="45" name="exit" tags="" position="935,1976">&lt;hr color=#00FF21&gt;
-(live: 2s)[(transition: &quot;dissolve&quot;)[ [[Are you sure you want to exit? Y/N-&gt;exitConfirm]] ](stop:)]
+(live: 2s)[(transition: &quot;dissolve&quot;)[ [[Are you sure you want to exit the game? Y/N-&gt;exitConfirm]] ](stop:)]
 
 &lt;hr color=#00FF21&gt;
 |typed-delay0&gt;[&gt;exit]
@@ -707,11 +709,15 @@ You rolled a 1.
 &lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="54" name="donDwarfGear" tags="" position="1867,2075">&lt;hr color=#00FF21&gt;
 (live: 2s)[(transition: &quot;dissolve&quot;)[ (link-reveal: &quot;You slip your naked body into Haggin&#x27;s clothes. One of the dwarves uncovers one eye.&quot;)[
 
-&quot;Hey!&quot; cries the dwarf. &quot;The nude one&#x27;s out cold, but he&#x27;s stolen Haggin&#x27;s beard!&quot;
+(link-reveal: &quot;&amp;quot;Hey!&amp;quot; cries the dwarf. &amp;quot;The nude one&#x27;s out cold, but he&#x27;s stolen Haggin&#x27;s beard!&amp;quot;&quot;)[
 
--
+(link-reveal: &quot;The dwarf squad surrounds the real Haggin and beats the poor dwarf senseless. &amp;quot;Thanks,&amp;quot; you say, in your best Dwarvish accent. &amp;quot;It&#x27;s a real shame he stole my beard.&amp;quot;&quot;)[
 
-] ](stop:)]
+(link-reveal: &quot;&amp;quot;Oh, don&#x27;t worry about it, Haggin,&amp;quot; says one of your new dwarf friends. &amp;quot;I&#x27;ll bet ye&#x27;ll grow another by the end of the week!&amp;quot;&quot;)[
+
+(link-reveal: &quot;And so began your newfound life as Haggin the Dwarf. You no longer need your father&#x27;s silly quest or the trivialities of this tavern, for your new dwarvish friends provided all that you require. While you can never grow a beard as thick and dwarvish as Haggin&#x27;s, you live for many more adventures as an impostor and live happily ever after.&quot;)[
+
+[[Thanks for playing! Play again? Y/N-&gt;restartReal]] ]]]]] ](stop:)]
 
 &lt;hr color=#00FF21&gt;
 |typed-delay0&gt;[&gt;don dwarf gear]
@@ -769,7 +775,7 @@ You rolled a 1.
 |typed-delay0&gt;[&gt;give barkeep note from haggin]
 &lt;hr color=#00FF21&gt;
 
-&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="59" name="drinkPotion" tags="" position="2087,1644">&lt;hr color=#00FF21&gt;
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="59" name="drinkPotion" tags="" position="2088,1641">&lt;hr color=#00FF21&gt;
 (live: 2s)[(transition: &quot;dissolve&quot;)[(link-reveal: &quot;Well, here goes nothing.&quot;)[
 
 (link-reveal: &quot;Praying to the gods for mercy, you chug the vial&#x27;s vile contents.&quot;)[
@@ -786,7 +792,16 @@ You rolled a 1.
 |typed-delay0&gt;[&gt;drink potion]
 &lt;hr color=#00FF21&gt;
 
-&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="60" name="invisibleNude" tags="" position="2349,1906">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="61" name="invisibleRemoveRobe" tags="" position="2235,1735">&lt;hr color=#00FF21&gt;
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="60" name="invisibleNude" tags="" position="2349,1906">&lt;hr color=#00FF21&gt;(set: $money to 3)
+(live: 2s)[(transition: &quot;dissolve&quot;)[(link-reveal: &quot;You slip away from the town guards and out of the tavern.&quot;)[
+
+[[You are now in a crowded marketplace, bustling with people as it prepares to shut down for the night.-&gt;pickpocketLoop]] ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;exit tavern]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="61" name="invisibleRemoveRobe" tags="" position="2235,1735">&lt;hr color=#00FF21&gt;
 (live: 2s)[(transition: &quot;dissolve&quot;)[ [[Look out ladies!-&gt;invisibleNude]] ](stop:)]
 
 &lt;hr color=#00FF21&gt;
@@ -835,7 +850,7 @@ An old, mysterious book-&gt;bookIsImportant]] ] ](stop:)]
 |typed-delay0&gt;[&gt;take gold]
 &lt;hr color=#00FF21&gt;
 
-&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="66" name="leaveBasement" tags="" position="2352,1487">&lt;hr color=#00FF21&gt;
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="66" name="leaveBasement" tags="" position="2352,1487">(set: $ratsAlive to true)&lt;hr color=#00FF21&gt;
 (live: 2s)[(transition: &quot;dissolve&quot;)[ [[As you turn to leave the basement, you seem to hear a subtle, ghostly voice from the direction of the cabinet that reminds you of your father.-&gt;openCabinet]]
 
 -
@@ -992,13 +1007,20 @@ WILL LAND IN DEEP TROUBLE?&amp;quot;&quot;)[(goto: &quot;blankTroll&quot;)] ]]]]
 
 -
 
-[[At long last, you come across a set of stairs that seem to lead out of the labyrinth! Huzzah!-&gt;exitMaze]] ] ](stop:)]
+[[At long last, you come across a door that seem to lead out of the labyrinth! Huzzah!-&gt;exitMaze]] ] ](stop:)]
 
 &lt;hr color=#00FF21&gt;
 |typed-delay0&gt;[&gt;go %DIR%]
 &lt;hr color=#00FF21&gt;(replace: &quot;%DIR%&quot;)[$direction]
 
-&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="79" name="exitMaze" tags="" position="3518,1523">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="80" name="lookTavern" tags="" position="2320,1603">&lt;hr color=#00FF21&gt;
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="79" name="exitMaze" tags="" position="3518,1523">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ [[After exiting the labyrinth, you find yourself in a large stone chamber. The room is completely empty except for a marble staircase spiraling upwards.-&gt;goStairs]] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;go door]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="80" name="lookTavern" tags="" position="2320,1603">&lt;hr color=#00FF21&gt;
 (live: 2s)[(transition: &quot;dissolve&quot;)[(link-reveal: &quot;The tavern is pretty darn quiet now that everybody inside is now dead, thanks to your heroic endeavors.&quot;)[
 
 [[You see an exit out of the tavern, as well as a door leading to the tavern basement.-&gt;goBasementDead]] ] ](stop:)]
@@ -1040,7 +1062,7 @@ WILL LAND IN DEEP TROUBLE?&amp;quot;&quot;)[(goto: &quot;blankTroll&quot;)] ]]]]
 |typed-delay0&gt;[&gt;go north]
 &lt;hr color=#00FF21&gt;
 
-&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="84" name="goBasementDead" tags="" position="2503,1687">&lt;hr color=#00FF21&gt;
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="84" name="goBasementDead" tags="" position="2503,1687">(set: $barkeepDead to true)&lt;hr color=#00FF21&gt;
 (live: 2s)[(transition: &quot;dissolve&quot;)[ [[You slip away into the basement. Inside, you see swarms of rats scurrying along the floor and a closed cabinet nearby.-&gt;openCabinetDead]] ](stop:)]
 
 &lt;hr color=#00FF21&gt;
@@ -1063,6 +1085,198 @@ An old, mysterious book-&gt;bookIsSpecialDead]] ] ](stop:)]
 
 &lt;hr color=#00FF21&gt;
 |typed-delay0&gt;[&gt;take gold]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="87" name="goStairs" tags="" position="3600,1648">&lt;hr color=#00FF21&gt;(set: $stairLength to 0)
+(live: 2s)[(transition: &quot;dissolve&quot;)[ (link-reveal: &quot;You ascend higher and higher on the marble spiral staircase, but the journey never seems to end.&quot;)[
+
+(live: 0.5s)[(if: $stairLength is 0)[(link: &quot;Your arduous effort upwards lasts &lt;i&gt;12 whole minutes&lt;/i&gt;.&quot;)[(set: $stairLength to &quot;minutes&quot;)]
+
+-
+
+(link: &quot;Your arduous effort upwards lasts &lt;i&gt;12 whole hours&lt;/i&gt;.&quot;)[(set: $stairLength to &quot;hours&quot;)]
+
+-
+
+(link: &quot;Your arduous effort upwards lasts &lt;i&gt;12 whole days&lt;/i&gt;.&quot;)[(set: $stairLength to &quot;days&quot;)]
+
+-
+
+(link: &quot;Your arduous effort upwards lasts &lt;i&gt;12 whole years&lt;/i&gt;.&quot;)[(set: $stairLength to &quot;years&quot;)]](if: $stairLength is not 0)[Your arduous effort upwards lasts &lt;i&gt;12 whole $stairLength&lt;/i&gt;.
+
+[[At the crest of the marble spiral staircase, a white door with strange symbols lies ahead. At the bottom lies a door back into the labyrinth.-&gt;goDoorWhoops]] (stop:)] ] ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;go stairs]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="88" name="goDoorWhoops" tags="" position="3672,1519">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ [[You descend back down the marble spiral staircase and walk through the door, re-entering the labyrinth. The journey down the stairs takes another 12 $stairLength.-&gt;exitFngGame]] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;go door]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="89" name="exitFngMaze" tags="" position="3842,1517">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ [[After exiting the labyrinth, you find yourself in a large stone chamber. The room is completely empty except for a marble staircase spiraling upwards.-&gt;goStairsAgain]] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0-speed120&gt;[&gt;GO DOOR]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="90" name="goStairsAgain" tags="" position="3908,1647">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ (link-reveal: &quot;You ascend higher and higher on the marble spiral staircase, but the journey never seems to end.&quot;)[
+
+(link-reveal: &quot;Your arduous effort upwards lasts &lt;i&gt;12 whole $stairLength&lt;/i&gt;.&quot;)[
+
+[[At the crest of the marble spiral staircase, a white door with strange symbols lies ahead. At the bottom lies a door back into the labyrinth.-&gt;goWhiteDoor]] ] ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0-speed120&gt;[&gt;GO STAIRS]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="91" name="exitFngGame" tags="" position="3779,1392">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ [[Are you sure you want to exit the game? Y/N-&gt;exitFngMaze]] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;exit stupid maze]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="92" name="goWhiteDoor" tags="" position="3998,1518">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ (link-reveal: &quot;You open the white door at the top of the marble spiral staircase.&quot;)[
+
+(link-reveal: &quot;You emerge into a small, white marble room, with windows that reveal that you are no longer within the material realm.&quot;)[
+
+[[Inside the room stands a wizard, wearing wizardly robes and a long, wizardly beard.-&gt;talkWizard]]
+
+-
+
+[[Inside the room, the floating spectre of your dead father stands before you, who seems as if he longs to see you.-&gt;attackGhost]] ] ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0-speed80&gt;[&gt;go WHITE door]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="93" name="talkWizard" tags="" position="4146,1401">(set: $ghosts to false)&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ (link-reveal: &quot;The wizard strokes his wizardly beard and speaks at you in a loud voice. &amp;quot;I HAVE BEEN WATCHING YOU CLOSELY, ADVENTURER. I AM THE MASTER OF THE MAGIC REALM WITHIN THIS TAVERN. I AM CALLED THE TAVERN MASTER.&amp;quot;&quot;)[
+
+(link-reveal: &quot;&amp;quot;A GREAT REWARD AWAITS THEE, TRAVELER, BUT ONLY AFTER ONE FINAL GREAT TRIAL. FOR TO REAP THE TAVERN&#x27;S TREMENDOUS TREASURE, YOU MUST ANSWER THIS TAVERN&#x27;S TREMENDOUS TRIVIA!&amp;quot;&quot;)[
+
+[[&quot;QUESTION, THE FIRST OF THREE: HOW MANY BARRELS LIE IN THE TAVERN&#x27;S BASEMENT?&quot;-&gt;uhh1]] ] ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;talk wizard]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="94" name="attackGhost" tags="" position="4139,1651">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ [[As you raise your sword and near the ghost of your dead father, the ghost of your dead father disappears. He leaves behind a note, which probably contains everything that he wanted to say to his mortal son.-&gt;exitWhiteRoom]]
+
+-
+
+(link-reveal: &quot;After you dispel the ghost of your dead father, he is no longer a nuisance to you.&quot;)[
+
+(link: &quot;A hidden door opens, revealing a secret chamber.&quot;)[(set: $ghosts to true)(goto: &quot;goSecretChamber&quot;)] ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;attack ghost]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="95" name="uhh1" tags="" position="4252,1291">&lt;hr color=#00FF21&gt;
+(live: 3s)[(goto: &quot;seven?&quot;)]
+
+&lt;hr color=#00FF21&gt;
+&gt;&lt;span class=&quot;blink&quot;&gt;|&lt;/span&gt;
+
+&lt;hr color=#00FF21&gt;</tw-passagedata><tw-passagedata pid="96" name="seven?" tags="" position="4350,1404">&lt;hr color=#00FF21&gt;
+(live: 1s)[(transition: &quot;dissolve&quot;)[ (link-reveal: &quot;&amp;quot;THAT IS CORRECT!&amp;quot;&quot;)[
+
+[[&quot;QUESTION, THE SECOND: WHAT IS THE NAME OF THE BARKEEP?&quot;-&gt;uhh2]](if: $barkeepDead is true)[(replace: &quot;WHAT IS THE NAME&quot;)[WHAT WAS THE NAME]] ]
+
+-
+
+(link-reveal: &quot;&amp;quot;THAT IS INCORRECT!&amp;quot;&quot;)[
+
+(link-reveal: &quot;The Tavern Master strikes the ground with his wizardly staff and you evaporate in a wizardly puff of smoke. You die.&quot;)[
+
+[[Restart? Y/N-&gt;restartReal]] ] ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;7]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="97" name="uhh2" tags="" position="4474,1506">&lt;hr color=#00FF21&gt;
+(live: 3s)[(goto: &quot;steve?&quot;)]
+
+&lt;hr color=#00FF21&gt;
+&gt;&lt;span class=&quot;blink&quot;&gt;|&lt;/span&gt;
+
+&lt;hr color=#00FF21&gt;</tw-passagedata><tw-passagedata pid="98" name="steve?" tags="" position="4578,1397">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ (link-reveal: &quot;&amp;quot;THAT IS CORRECT!&amp;quot;&quot;)[
+
+[[&quot;QUESTION, THE THIRD AND FINAL: WHAT WOULD ONE TYPE TO COMMIT SUICIDE?&quot;-&gt;uhh3]] ]
+
+-
+
+(link-reveal: &quot;&amp;quot;THAT IS INCORRECT!&amp;quot;&quot;)[
+
+(link-reveal: &quot;The Tavern Master strikes the ground with his wizardly staff and you evaporate in a wizardly puff of smoke. You die.&quot;)[
+
+[[Restart? Y/N-&gt;restartReal]] ] ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0-speed100&gt;[&gt;steve?]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="99" name="uhh3" tags="" position="4694,1289">&lt;hr color=#00FF21&gt;
+(live: 2s)[(goto: &quot;killSelf&quot;)]
+
+&lt;hr color=#00FF21&gt;
+&gt;&lt;span class=&quot;blink&quot;&gt;|&lt;/span&gt;
+
+&lt;hr color=#00FF21&gt;</tw-passagedata><tw-passagedata pid="100" name="killSelf" tags="" position="4798,1398">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ (link-reveal: &quot;Goodbye cruel world! You strangle yourself on the spot. You die.&quot;)[
+
+[[Restart? Y/N-&gt;restartReal]] ]
+
+-
+
+(link-reveal: &quot;&amp;quot;THAT IS CORRECT!&amp;quot;&quot;)[
+
+[[The Tavern Master opens a hidden door and motions for you to enter the secret chamber.-&gt;goSecretChamber]] ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0-speed100&gt;[&gt;kill self]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="101" name="goSecretChamber" tags="" position="4878,1623">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ (link-reveal: &quot;Pillars of wizardly fire arise in the large chamber to reveal boatloads o&#x27; gold! Even with the inordinate amount of taxes sure to be incurred, you probably have more than a hundred times more wealth than you&#x27;d need to last you &#x27;til the day you die.&quot;)[
+
+(link-reveal: &quot;%%%&quot;)[
+
+[[Thanks for playing! Play again? Y/N-&gt;restartReal]] ](replace: &quot;%%%&quot;)[As you return to the humble tavern from whence you began, with a literal boatload of gold in tow, (if: $barkeepDead is true)[you pat yourself on the back as you push aside all the dead tavern patrons&#x27; bodies.](else-if: $dwarvesDead is true)[the lonely barkeep left in his tavern congratulates you on your impressive inheritance.](else:)[all of the taverns&#x27; patrons whoop and holler in celebration of your great feat(if: $ratsAlive is true)[, including the pack of rats now infesting the main floor of the tavern].] Minstrels will surely sing your name for ages, and you even still hang out with the old Tavern Master from time to time.]]] (if: $stairLength is &quot;years&quot;)[(append: &quot;til the day you die&quot;)[, which day is now admittedly much, much closer than when you began]] (if: $ghosts is true)[(replace: &quot;wizardly&quot;)[ghostly]](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay00&gt;[&gt;go secret chamber]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="102" name="exitWhiteRoom" tags="" position="4212,1526">(set: $ghosts to false)&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ [[Not wanting to bother with the note that the ghost of your dead father left for you, you start to leave the white room. A magic barrier materializes and prevents you from leaving. You turn around again to see a wizardly wizard-type has appeared in the room.-&gt;talkWizard]] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;go white door]
+&lt;hr color=#00FF21&gt;
+
+&lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata><tw-passagedata pid="103" name="pickpocketLoop" tags="" position="2349,2056">&lt;hr color=#00FF21&gt;
+(live: 2s)[(transition: &quot;dissolve&quot;)[ (set: $newMoney to (random: 15, 35))(set: $money to $money + $newMoney)(link: &quot;Your unsuspecting victim has no chance of catching an invisible thief. You pocket $newMoney GOLD from the random commoner, so you now have a total of $money GOLD.&quot;)[(goto: &quot;pickpocketLoop&quot;)] (if: $money &gt;= 75)[
+
+-
+
+(link-reveal: &quot;The city guards throw a bucket of paint in the crowd, splashing all over you and rendering you now visible. They soon tackle and arrest you. After a night in city jail, you are executed the following morning. You die.&quot;)[
+
+[[Restart? Y/N -&gt;restartReal]] ] ] ](stop:)]
+
+&lt;hr color=#00FF21&gt;
+|typed-delay0&gt;[&gt;pickpocket someone]
 &lt;hr color=#00FF21&gt;
 
 &lt;script&gt;startTypedModule();&lt;/script&gt;</tw-passagedata></tw-storydata>
